@@ -5,7 +5,7 @@
 # também a quantidade de anos que falta para se alistar 
 # ou que passou do prazo.
 
-from myUtils import myUtils
+from myLibs import ask_input
 from datetime import date
 
 def main():
@@ -20,7 +20,7 @@ def main():
   perdeu_prazo = False
   anos_prazo = False
 
-  ano_nascimento = myUtils.ask_input("Entre o ANO do Nascimento", "int")
+  ano_nascimento = ask_input("Entre o ANO do Nascimento", "int")
   ano_alistar = ano_nascimento + IDADE_MAXIMA_ALISTAMENTO
 
   perdeu_prazo = True if ANO_ATUAL > ano_alistar else False

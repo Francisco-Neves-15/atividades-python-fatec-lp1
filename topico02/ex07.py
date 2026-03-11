@@ -10,7 +10,7 @@
 #  Entre 35 e 39,99 Obesidade II (severa)
 #  Acima de 40 Obesidade III (mórbida)
 
-from myUtils import myUtils
+from myLibs import ask_input
 
 tabela = [
   { "min": 0,    "max": 16.99, "nivel": "Muito abaixo do peso" },
@@ -28,8 +28,8 @@ def main():
   imc_valor = 0
   resultado = 0
 
-  altura_cm = myUtils.ask_input("Altura (cm)", "int")
-  peso_k = myUtils.ask_input("Peso (K)", "int")
+  altura_cm = ask_input("Altura (cm)", "int")
+  peso_k = ask_input("Peso (K)", "int")
 
   imc_valor = round(( peso_k / ( altura_cm * 2 ) ) * 100, 2)
 

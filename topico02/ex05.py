@@ -4,7 +4,7 @@
 # salário. O empréstimo deverá ser negado caso o valor da
 # parcela exceda 30% do salário.
 
-from myUtils import myUtils
+from myLibs import calc_porc
 
 def main():
   print("\n===== Empréstimo Bancário =====")
@@ -30,7 +30,7 @@ def main():
         pass
 
   valor_parcelas = infos[0]["value"] / infos[1]["value"]
-  exced_salario = myUtils.calc_porc(infos[2]["value"], PORC_EXCED)
+  exced_salario = calc_porc(infos[2]["value"], PORC_EXCED)
 
   print("===== Resultados =====")
   print(f"Empréstimo : {"Aceito" if not valor_parcelas > exced_salario else "Negado"}")

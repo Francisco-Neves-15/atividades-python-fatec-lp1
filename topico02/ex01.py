@@ -4,7 +4,7 @@
 # calcule um aumento de 10%, caso contrário, 
 # calcule um aumento de 15%.
 
-from myUtils import myUtils
+from myLibs import calc_porc
 
 def main():
   print("\n===== Calculo de Aumento de Salario =====")
@@ -24,9 +24,9 @@ def main():
       pass
 
   if sal > VALOR_REQ:
-    sal_aumento = sal + myUtils.calc_porc(sal, PORC_AUMENTO_REQ)
+    sal_aumento = sal + calc_porc(sal, PORC_AUMENTO_REQ)
   else:
-    sal_aumento = sal + myUtils.calc_porc(sal, PORC_AUMENTO_BASE)
+    sal_aumento = sal + calc_porc(sal, PORC_AUMENTO_BASE)
   
   print("=== Salários ===")
   print(f"| Antigo : {sal}")
