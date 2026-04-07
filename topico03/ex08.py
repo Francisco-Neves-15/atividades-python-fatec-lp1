@@ -64,8 +64,7 @@ def main():
       case "v2":
         v2()
   else:
-    print("Versão Inexistent!")
+    print("Versão Inexistente!")
 
 if __name__ == "__main__":
-  # main()
   v1()
