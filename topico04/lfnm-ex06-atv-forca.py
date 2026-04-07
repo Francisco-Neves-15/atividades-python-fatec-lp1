@@ -5,19 +5,24 @@
 # Caso não exista, o usuário perderá uma chance. No total, 
 # o usuário terá 6 chances para acertar.
 
+# ==================================================
+
 # Luiz Francisco Neves Mendes
 
 # Uma versão deste código já existia devido aos exercícios
 # extras do tópico 3, ele apenas foi aprimorado.
 
-from getpass import getpass
-
 # ==================================================
 
+from getpass import getpass
+
+def separador():
+  print("=" * 20 + "\n")
+
 def mostrar_win():
-  print("=" * 20)
+  separador()
   print("Você ganhou!")
-  print("=" * 20)
+  separador()
 
 def mostrar_progresso(lista):
   print(" ".join(lista))
@@ -47,12 +52,16 @@ def main():
     mostrar_vidas(vidas)
     mostrar_progresso(progresso)
 
-    print("=" * 20 + "\n")
+    separador()
     print(f"Letras tentadas: {', '.join(letras_tentadas) if letras_tentadas else '-'}")
     print("| UMA letra para tentativa")
     print("| OU  a palavra")
 
     user_entry = input("→ ").upper()
+
+    if not user_entry:
+      print("Entrada vazia. Tente novamente.")
+      continue
 
     if user_entry in letras_tentadas:
       print("\n ! Você já tentou essa letra!")
@@ -88,7 +97,7 @@ def main():
 
       mostrar_progresso(progresso)
 
-      print("=" * 20 + "\n")
+      separador()
 
       if "_" not in progresso:
         mostrar_win()
