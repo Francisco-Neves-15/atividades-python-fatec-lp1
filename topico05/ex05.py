@@ -14,30 +14,43 @@ alfabeto = string.ascii_lowercase
 frase1 = 'Jane quer LP, fax, CD, giz, TV e bom whisky'
 frase2 = 'Pneumoultramicroscopticosilicovulcanoconiotico'
 
-frase1_set = set()
-frase2_set = set()
+def metodo1(alfabeto, frase1, frase2):
+  frase1_set = set()
+  frase2_set = set()
 
-for l in frase1:
-  l = l.lower()
-  if l.isalpha():
-    frase1_set.add(l)
-frase1_set = sorted(frase1_set)
+  for l in frase1:
+    l = l.lower()
+    if l.isalpha():
+      frase1_set.add(l)
+  frase1_set = sorted(frase1_set)
 
-for l in frase2:
-  l = l.lower()
-  if l.isalpha():
-    frase2_set.add(l)
-frase2_set = sorted(frase2_set)
+  for l in frase2:
+    l = l.lower()
+    if l.isalpha():
+      frase2_set.add(l)
+  frase2_set = sorted(frase2_set)
 
-frase1_set = "".join(frase1_set)
-frase2_set = "".join(frase2_set)
+  frase1_set = "".join(frase1_set)
+  frase2_set = "".join(frase2_set)
 
-if (frase1_set == alfabeto):
-  print("É um pantograma")
-else:
-  print("Não é um pantograma")
+  if (frase1_set == alfabeto):
+    print("É um pantograma")
+  else:
+    print("Não é um pantograma")
 
-if (frase2_set == alfabeto):
-  print("É um pantograma")
-else:
-  print("Não é um pantograma")
+  if (frase2_set == alfabeto):
+    print("É um pantograma")
+  else:
+    print("Não é um pantograma")
+
+def metodo2(alfabeto, frase1, frase2):
+  alfabeto = set(alfabeto)
+
+  frase1 = set(frase1.lower())
+  print(alfabeto <= frase1)
+
+  frase2 = set(frase2.lower())
+  print(alfabeto <= frase2)
+
+metodo1(alfabeto, frase1, frase2)
+metodo2(alfabeto, frase1, frase2)
