@@ -6,7 +6,7 @@ produtos = {
 
 q_a = 0
 for nome, preco, quantidade in produtos.values():
-  q_a += preco
+  q_a += preco * quantidade
 
 precos = []
 for nome, preco, quantidade in produtos.values():

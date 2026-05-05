@@ -1,12 +1,13 @@
 musculacao = {"Ana", "Bruno", "Carlos", "Daniela"}
 funcional = {"Carlos", "Eduarda", "Fernanda", "Bruno"}
+alunos = {}
 
-q_a = musculacao & funcional
-q_b = musculacao - funcional
-q_c = funcional - musculacao
-q_d = musculacao | funcional
+alunos["ambas"] = musculacao & funcional
+alunos["musculacao"] = musculacao - funcional
+alunos["funcional"] = funcional - musculacao
+alunos["unicos"] = musculacao | funcional
 
-print(q_a)
-print(q_b)
-print(q_c)
-print(q_d)
+print(alunos["ambas"])
+print(alunos["musculacao"])
+print(alunos["funcional"])
+print(alunos["unicos"])
